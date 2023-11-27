@@ -1,0 +1,40 @@
+{
+  "name": "testtaskbrocoders",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "scripts": {
+    "build": "nest build",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "typeorm": "ts-node ./node_modules/typeorm/cli.js",
+    "lint": "eslint . --ext .ts",
+    "migration:generate": "npm run typeorm -- -d typeOrm.config.ts migration:generate ./src/migrations/generate",
+    "migration:create": "npm run typeorm -- migration:create ./src/migrations/create",
+    "migration:run": "npm run typeorm migration:run -- -d typeOrm.config.ts",
+    "migration:revert": "npm run typeorm -- -d typeOrm.config.ts migration:revert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViktoryaSVA/TestTaskBrocoders.git"
+  },
+  "author": "SVA",
+  "license": "ISC",
+  "dependencies": {
+    "@nestjs/common": "^9.4.3",
+    "@nestjs/core": "^9.4.0",
+    "@nestjs/platform-express": "^9.4.0",
+    "@nestjs/typeorm": "^10.0.1",
+    "@nestjsx/crud": "^5.0.0-alpha.3",
+    "@nestjsx/crud-typeorm": "^5.0.0-alpha.3",
+    "pg": "^8.11.3",
+    "typescript": "^4.4.4",
+    "typescript-eslint": "^0.0.1-alpha.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^6.12.0",
+    "eslint": "^8.54.0",
+    "ts-node": "^10.4.0"
+  }
+}
